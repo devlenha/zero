@@ -1,0 +1,181 @@
+
+:root {
+  --text-color: #fff;
+  --bg-url: url(./assets/bg_mobile.jpg);
+  --border-color: rgba(255, 255, 255, 0.06);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-active: rgba(0, 0, 0, 0.11);
+  --switch-img: url(./assets/moon_stars.svg);
+  --bg-gradient: linear-gradient(45deg, #532D68, #3A173B, #2B132B,#141217);
+}
+
+.ligth {
+  --text-color: #0e0e0e;
+  --bg-url: url(./assets/bg_ligth_mobile.jpg);
+  --border-color: rgba(0, 0, 0, 0.06);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-active: rgba(0, 0, 0, 0.11);
+  --switch-img: url(./assets/sun.svg);
+  --bg-gradient: linear-gradient(45deg, #D5C0E8, #EFEEF6, #E5B2E2,#CBB3E9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /*força os elementos a partir da borda*/
+  box-sizing: border-box;
+}
+
+body {
+  background-image: var(--bg-url);
+  background-repeat: no-repeat;
+  /* Y X */
+  background-position: top center;
+
+  /*  background-size
+  * COVER: cobre a area  visivel
+  * CONTAIN: contem a imgens no elemento onde ela esta
+  */
+  background-size: cover;
+  /**
+  *AGUPAMENTO DE ATRIBUTOS
+    background:url(./assets/bg_mobile.jpg) no-repeat top center /cover ;
+    */
+}
+body * {
+  font-family: "Inter";
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  /*alinar uma caixa, cria espeço vaxio aos lado da caixa
+  * CSS tem regra que nao preenche automatico  o TOP e BOTTOM : ZERO no Y e auto no X*/
+  margin: 56px auto 0;
+  padding: 24px;
+}
+
+
+/*---------------PROFILE*/
+
+#profile {
+  text-align: center;
+  padding: 24px;
+  font-size: 12px;
+}
+#profile img {
+  width: 112px;
+  /*alinhamento de img
+  * DISPLAY (atributo de elementos alguns tem)
+  * BLOCK: pega toda a largura dspinuivel, entao o resto fica par baixo
+  * o IMG  é um elmento inline, nestes eu nao consigo alipcar o MARGIN
+  * Todo elemento inline, aceita seu pai como center, 
+  */
+}
+#profile p {
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+
+/*---------------SWITCH*/
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff var(--switch-img) no-repeat center;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+
+}
+#switch span {
+  width: 64px;
+  height: 24px;
+  display: block;
+  margin: 0 auto;
+  background-color: var(--surface-color);
+  border: 0.1px solid var(--border-color);
+  border-radius: 9999px;  
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.ligth #switch button {
+  right: 0;
+  left: initial;
+  
+}
+
+/*--------------LINKS*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background:  var( --surface-color);
+  border: 0.2px solid var(--strock-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  
+  
+
+  box-shadow: #444444 -1px 1px 5px;
+  
+}
+ul li a:hover {
+  
+  box-shadow: #444444 -1px 1px 3px;
+  
+}
+ul li a:active {
+  
+  box-shadow: #444444 -1px 1px 1px;
+  
+}
+
+
+/*-----------------------ICONS*/
+#social_links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+  gap: 5px;
+}
+#social_links a {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.3s;
+  border-radius: 50%;
+  align-items: center;
+}
+#social_links a:hover {
+  background-color: var(--surface-color);
+  padding: 16px;
+}
+
+#social_links a:active {
+  background-color: var(--surface-color-active);
+  padding: 16px;
+}
