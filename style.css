@@ -27,6 +27,7 @@
 }
 
 body {
+  height: 100vh;
   background-image: var(--bg-url);
   background-repeat: no-repeat;
   /* Y X */
@@ -98,8 +99,20 @@ body * {
   top: 50%;
   transform: translateY(-50%);
   
+  animation: desliza-switch-back 0.3s ;
 
 }
+
+.ligth #switch button {
+  
+  animation: desliza-switch-in 0.3s forwards;
+  
+}
+
+#switch button:hover {
+  outline: 8px solid #1111111e;
+}
+
 #switch span {
   width: 64px;
   height: 24px;
@@ -111,11 +124,7 @@ body * {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
-.ligth #switch button {
-  right: 0;
-  left: initial;
-  
-}
+
 
 /*--------------LINKS*/
 ul {
@@ -185,4 +194,36 @@ ul li a:active {
   padding: 24px 0;
   text-align: center;
   font-size: 11px;
+}
+
+
+
+/*------------------MEDIA QUERY
+* 
+*/
+@media (min-width: 800px){
+  :root{
+    --bg-url: url(./assets/bg.jpg);
+  }
+  .ligth {
+    --bg-url: url(./assets/bg_ligth.jpg);
+  }
+}
+
+
+@keyframes desliza-switch-in{
+  from {
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+@keyframes desliza-switch-back{
+  from {
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
 }

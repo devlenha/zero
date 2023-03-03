@@ -12,18 +12,19 @@ function modeLigth(){
   }
 
 */
+/*
   //Substia a img
   const img = document.querySelector('#profile img');
 
   if(dom.classList.contains('ligth')){
     img.setAttribute('src',"./assets/img_profile_dark.png")
-    img.setAttribute("alt", "TESTE")
+    img.setAttribute("alt", "")
   }else{
-img.setAttribute("src", "./assets/img_profile.png")
-img.setAttribute("alt", "volou")
+    img.setAttribute("src", "./assets/img_profile.png")
+    img.setAttribute("alt", "")
   }
   
-  
+  */
 
 }
 
